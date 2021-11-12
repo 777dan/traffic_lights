@@ -1,0 +1,17 @@
+#red_light {
+    background-color: red;
+    width: 300px;
+    height: 300px;
+}
+
+#yellow_light {
+    background-color: yellow;
+    width: 300px;
+    height: 300px;
+}
+
+#green_light {
+    background-color: green;
+    width: 300px;
+    height: 300px;
+}
