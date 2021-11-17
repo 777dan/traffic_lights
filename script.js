@@ -35,40 +35,92 @@
 // x = two();
 // console.log(x);
 
+
+
+
+// function initCounter(name) {
+//     let color = "green";
+//     let innerCounter = function () {
+//         // return ++counter;
+//         if (color == "green") {
+//             color = "red";
+//         }
+//         else if (color == "yellow") {
+//             color = "green";
+
+//         }
+//         // else if (color == "yellow") {
+//         //     color = "green";
+
+//         // }
+//         else {
+//             color = "yellow";
+//         }
+//         return name + " " + color;
+//     };
+//     return innerCounter;
+// }
+
+// let counter1 = initCounter("first"); // первый счетчик
+// console.log(counter1()); // 1
+// console.log(counter1());
+// console.log(counter1());
+// console.log(counter1());
+// // alert(counter1()); // 3
+
+// let counter2 = initCounter("second"); // второй счетчик 
+// console.log(counter2());
+// console.log(counter2());
+// console.log(counter2());
+// console.log(counter2());
+//  // 1 - второй счетчик независим от первого
+// // alert(counter()); // 4 - первый счетчик продолжает считать независимо от второго!
+
+// const colorList = [
+//     { name: 'yellow' },
+//     { name: 'red' },
+//     { name: 'yellow' },
+//     { name: 'green' }
+// ];
+
+// let count = 0;
+
+// function changeColor() {
+//     if (count === colorList.length) {
+//         count = 0;
+//     }
+//     console.log(colorList[count].name)
+//     // setTimeout(changeColor, colorList[count].interval)
+//     count = count + 4;
+// }
+
+// changeColor()
+
 function initCounter(name) {
-    let color = "green";
+    let count = 0;
+    let color;
+    let colorList = ['red', 'yellow', 'green', 'yellow'];
     let innerCounter = function () {
-        // return ++counter;
-        if (color == "green") {
-            color = "red";
-        }
-        else if (color == "yellow") {
-            color = "green";
-
-        }
-        // else if (color == "yellow") {
-        //     color = "green";
-
-        // }
-        else {
-            color = "yellow";
+        color = colorList[count];
+        count++;
+        if (count == 4) {
+            count = 0;
         }
         return name + " " + color;
     };
     return innerCounter;
 }
 
-let counter1 = initCounter("first"); // первый счетчик
-console.log(counter1()); // 1
+let counter1 = initCounter("first");
 console.log(counter1());
 console.log(counter1());
 console.log(counter1());
-// alert(counter1()); // 3
+console.log(counter1());
+console.log(counter1());
+console.log(counter1());
 
-let counter2 = initCounter("second"); // второй счетчик 
+let counter2 = initCounter("second");
 console.log(counter2());
 console.log(counter2());
 console.log(counter2());
 console.log(counter2());
- // 1 - второй счетчик независим от первого
-// alert(counter()); // 4 - первый счетчик продолжает считать независимо от второго!
